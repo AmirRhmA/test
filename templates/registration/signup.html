@@ -1,0 +1,32 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title> Sign Up </title>
+   <link href="{% static 'css/login-box.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div style="padding: 100px 0 0 420px;">
+        <style type="text/css">
+            #login-box{
+                width:260px;
+	            height: 320px;
+                padding: 50px 70px 0 80px;
+	            color: #ebebeb;
+	            font: 12px Arial, Helvetica, sans-serif;
+                background: url("{% static '/images/login-box-backg.png' %}") no-repeat left top;
+            }
+        </style>
+        <div id="login-box">
+           <h2>Sign Up</h2>
+           <form method="POST">
+              {% csrf_token %}
+              {{ form|crispy }}
+              <br>
+              <button class="btn btn-success ml-2" type="submit">Sign Up</button>
+           </form>
+        </div>
+     </div>
+  </body>
+  </html>

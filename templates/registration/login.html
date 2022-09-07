@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title> Login </title>
+   <link href="{% static 'css/login-box.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+   <div style="padding: 100px 0 0 420px;">
+      <style type="text/css">
+         #login-box{
+             width:280px;
+            height: 200px;
+             padding: 58px 76px 0 76px;
+            color: #ebebeb;
+            font: 12px Arial, Helvetica, sans-serif;
+             background: url("{% static '/images/login-box-backg.png' %}") no-repeat left top;
+         }
+     </style>
+      <div id="login-box">
+         <h2>Log In</h2>
+         <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-success ml-2" style="margin-left:140px;" type="submit">Log In</button>
+         </form>
+      </div>
+   </div>
+</body>
+</html>
+
